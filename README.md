@@ -37,3 +37,17 @@ Aplikasi sistem daftar hadir rapat MAN 1 Jember lengkap menggunakan PHP, MySQL, 
    - Unggah lampiran dokumen rapat
    - Sistem pengingat otomatis
    - Mode gelap/terang
+
+## Instalasi
+
+1. Import database dengan menjalankan file `database/schema.sql` pada MySQL.
+2. Atur konfigurasi database pada `src/config.php`.
+3. Jalankan server PHP built in:
+
+```bash
+php -S localhost:8000 -t public
+```
+
+4. Akses aplikasi melalui `http://localhost:8000`.
+
+Diagram ER tersedia pada `database/er_diagram.mmd`.
