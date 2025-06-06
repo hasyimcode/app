@@ -1,0 +1,44 @@
+erDiagram
+    DEPARTMENTS ||--o{ USERS : contains
+    USERS ||--o{ MEETING_PARTICIPANTS : participates
+    USERS ||--o{ ATTENDANCE : has
+    MEETINGS ||--o{ MEETING_PARTICIPANTS : has
+    MEETINGS ||--o{ ATTENDANCE : records
+
+    DEPARTMENTS {
+        int id PK
+        string name
+    }
+
+    USERS {
+        int id PK
+        string username
+        string password
+        string name
+        enum role
+        int department_id FK
+    }
+
+    MEETINGS {
+        int id PK
+        string title
+        text agenda
+        date date
+        time start_time
+        time end_time
+        string location
+    }
+
+    MEETING_PARTICIPANTS {
+        int meeting_id FK
+        int user_id FK
+    }
+
+    ATTENDANCE {
+        int id PK
+        int meeting_id FK
+        int user_id FK
+        enum status
+        datetime timestamp
+        text signature
+    }
